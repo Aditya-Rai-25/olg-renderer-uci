@@ -64,7 +64,7 @@
 			uci_comment(output, '### generate downstream forwarding');
 			uci_section(output, 'firewall forwarding');
 			uci_set_string(output, 'firewall.@forwarding[-1].src', name);
-			uci_set_string(output, 'firewall.@forwarding[-1].dest', dest || ethernet.find_interface("upstream", interface.vlan.id));
+			uci_set_string(output, 'firewall.@forwarding[-1].dest', dest || ethernet.find_interface("upstream", 0));
 		}
 
 		for (let network in networks || ethernet.calculate_names(interface))

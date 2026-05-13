@@ -233,7 +233,7 @@ function create_ethernet(capab, fs, swconfig) {
 				return ':t';
 			if (port == "un-tagged")
 				return '';
-			return ((interface.role == 'upstream') && this.has_vlan(interface)) ? ':t' : '';
+			return ((interface.role == 'upstream') && this.has_vlan(interface)) ? ':t' : ':*';
 		},
 
 		find_interface: function(role, vid) {
